@@ -21,6 +21,11 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
         return "RCTToast";
     }
 
+    @Override
+    public boolean canOverrideExistingModule() {
+        return true;
+    }
+    
     @ReactMethod
     public void show(ReadableMap options) throws Exception {
         if (this.isPaused) {
